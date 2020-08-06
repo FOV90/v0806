@@ -29,19 +29,20 @@ namespace v0806
 
             if(label1.Left<0)
             {
-                vx = 10;
+                vx = Math.Abs(vx);
             }
             if(label1.Top<0)
             {
-                vy = 10;
+                vy = Math.Abs(vy);
             }
-            if(label1.Left>415)
+            if (label1.Right > ClientSize.Width)
+           
             {
-                vx = -10;
+                vx = -Math.Abs(vx);
             }
-            if(label1.Top>350)
+            if (label1.Bottom > ClientSize.Height)
             {
-                vy = -10;
+                vy = -Math.Abs(vy);
             }
             string t=label1.Text;
             label1.Text=kao;
@@ -56,8 +57,8 @@ namespace v0806
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            MessageBox.Show("幅"+ClientSize.Width);
-            MessageBox.Show("高さ"+ClientSize.Height);
+           // MessageBox.Show("幅"+ClientSize.Width);
+           // MessageBox.Show("高さ"+ClientSize.Height);
         }
     }
 }
