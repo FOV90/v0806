@@ -27,6 +27,22 @@ namespace v0806
             label1.Left += vx;
             label1.Top += vy;
 
+            if(label1.Left<0)
+            {
+                vx = 10;
+            }
+            if(label1.Top<0)
+            {
+                vy = 10;
+            }
+            if(label1.Left>415)
+            {
+                vx = -10;
+            }
+            if(label1.Top>350)
+            {
+                vy = -10;
+            }
             string t=label1.Text;
             label1.Text=kao;
             kao=t;
@@ -36,6 +52,12 @@ namespace v0806
         {
             vx = 0;
             vy = 0;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            MessageBox.Show("幅"+ClientSize.Width);
+            MessageBox.Show("高さ"+ClientSize.Height);
         }
     }
 }
